@@ -1,6 +1,12 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 from typing import Optional
+from enum import Enum
+
+
+class NivelAcesso(str, Enum):
+    ADMIN = "admin"
+    USUARIO = "usuario"
 
 class UsuarioCreateInput(BaseModel):
     nome: str
