@@ -132,7 +132,7 @@ def criar_admin_se_nao_existe(db: Session):
             email="adm@adm.com",
             senha=get_password_hash("adm"),
             nivel_acesso=NivelAcesso.ADMIN,
-            data_criacao=datetime.utcnow()
+            data_criacao=datetime.now(timezone.utc)
         )
         db.add(admin)
         db.commit()
